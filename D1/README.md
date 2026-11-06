@@ -29,7 +29,6 @@ mysql -u root -p -e "source tienda.sql"
 |---|---|---|---|
 | `JWT_SECRET` | **Sí** | (ninguno: sin ella la app no arranca) | Secreto para firmar los JWT. Base64 de al menos 32 bytes |
 | `JWT_EXPIRATION_MINUTES` | No | `10` | Minutos de vida del token |
-| `DB_URL` | No | `jdbc:mysql://localhost:3306/tienda_db?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC` | Conexión a MySQL |
 | `DB_USERNAME` | No | `root` | Usuario de MySQL |
 | `DB_PASSWORD` | No | (vacío) | Clave de MySQL |
 
@@ -127,7 +126,7 @@ Importa `postman/TiendaApp.postman_collection.json`. Variables de la colección:
 
 | Variable | Uso |
 |---|---|
-| `baseUrl` | `http://localhost:9090/api/v1/tienda` |
+
 | `token` | Se llena sola al ejecutar **Login** (y **Refresh token**). Todas las peticiones protegidas la usan |
 | `loginUser` / `loginPassword` | Credenciales que usa la petición Login. Cámbialas para entrar como otro usuario |
 | `categoryId`, `productId`, `orderId`, `userId` | Ids que tú anotas de las respuestas y usas en las rutas con `{id}` |
